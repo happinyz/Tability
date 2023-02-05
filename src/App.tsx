@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import RunningTime from "./components/RunningTime";
+import Word from "./components/Word";
+import GithubCalendar from "./components/GithubCalendar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Word></Word>
+      <RunningTime></RunningTime>
+      <GithubCalendar username="c3-alvinzou" tooltips={true}></GithubCalendar>
     </div>
   );
 }
