@@ -24,7 +24,7 @@ const RunningTime = ({}: IRunningTime) => {
       const time = DateTime.now().toLocaleString(timeFormat);
       setDate(date);
       setTime(time);
-    }, 1000);
+    }, 500);
     return () => clearInterval(interval);
   }, []);
 

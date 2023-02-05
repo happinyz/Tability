@@ -15,13 +15,11 @@ const GithubCalendar = ({
   tooltips,
 }: IGithubCalendar) => {
   useEffect(() => {
-    console.log(
-      GitHubCalendar(".GitHubCalendar", username, {
-        responsive: { responsive },
-        tooltips: { tooltips },
-        global_stats: false,
-      })
-    );
+    GitHubCalendar(".GitHubCalendar", username, {
+      responsive: { responsive },
+      tooltips: { tooltips },
+      global_stats: false,
+    });
   }, []);
 
   return (
