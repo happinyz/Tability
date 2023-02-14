@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { fetchDefinitions, fetchWordOfDay } from "../helpers/requests";
+import { fetchWordOfDay, WordResponse } from "../helpers/requests";
+import "../styles/styles.scss";
 
 // TODO: Replace with Wordnik API
 
@@ -12,22 +13,27 @@ const Word = ({}: IWord) => {
     day: "2-digit",
   });
   const [word, setWord] = useState<string>("");
-  const [definitions, setDefinitions] = useState<string[]>([]);
-  console.log(word);
-  console.log(definitions);
+  const [definitions, setDefinitions] = useState<string>("");
 
   const getWordDetails = async () => {
-    const word = await fetchWordOfDay(date);
-    const definitions = await fetchDefinitions("word");
-    setWord(word);
-    setDefinitions(definitions);
+    const wordDetails: WordResponse = await fetchWordOfDay(date);
+
+    console.log(wordDetails);
+    setWord(wordDetails.word);
+    setDefinitions(wordDetails.definitions);
   };
 
   useEffect(() => {
     getWordDetails();
   }, []);
 
-  return <div></div>;
+  return (
+    <div className="word-container">
+      <a className="word-main" href="https://www.wordnik.com/word-of-the-day">
+        {word} - {definitions}
+      </a>
+    </div>
+  );
 };
 
 export default Word;

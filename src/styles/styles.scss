@@ -27,11 +27,11 @@
     color: white;
 
     .time {
-        font-size: 96px;   
+        font-size: 128px;   
     }
 
     .date {
-        font-size: 48px;
+        font-size: 32px;
     }
 }
 
@@ -49,4 +49,49 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.nba-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: gray;
+    margin: 12px;
+}
+
+.nba-game-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 8px;
+}
+
+.word-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin: 8px;
+    bottom: 4px;
+
+    .word-main {
+        font-weight: bold;
+    }
+
+    .word-definition {
+
+    }
+    
+    a {
+        all: unset;
+    }
 }
